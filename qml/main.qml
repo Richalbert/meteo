@@ -8,6 +8,7 @@ Window
     height: 400
 
     Rectangle {
+        id: rect2base
         anchors.fill: parent
         color: "gray"
         
@@ -15,9 +16,11 @@ Window
             x: 0
             y: 0
             id: temperature_rectangle
+            //anchors.left:rect2base.right
+            //anchors.right:humidite_rectangle.left
             color: "crimson"
-            width: 200
-            height: 100
+            width: parent.width/3
+            height: parent.height/4
             
             Text {
                 id: temperature_text
@@ -27,12 +30,15 @@ Window
         
         
         Rectangle { // humidite
-            x: 200
+            //x: 200
+            //y: 0
+            x: parent.width/3
             y: 0
             id: humidite_rectangle
+            
             color: "chocolate"
-            width: 200
-            height: 100
+            width: parent.width/3
+            height: parent.height/4
             
             Text {
                 id: humidite_text
@@ -44,12 +50,16 @@ Window
 
         
         Rectangle { // pression
-            x: 400
+            //x: 400
+            x: parent.width*(2/3)
             y: 0
+            //anchors.left:humidite_rectangle.right
+            //anchors.right:rect2base.right
+            
             id: pression_rectangle
             color: "rosybrown"
-            width: 200
-            height: 100
+            width: parent.width/3
+            height: parent.height/4
             
             Text { 
                 id: pression_text
@@ -57,33 +67,44 @@ Window
             }
             
 
-        } // fin_pression
+         } // fin_pression
 
+         
         Rectangle { // tendance
             x: 0
-            y: 100
+            //y: 100
+            y: parent.height/4
             id: tendance_rectangle
             color: "seagreen"
-            width: 300
-            height: 200
+            width: parent.width/2
+            height: parent.height*(2/4)
             
             Text {
                 id: tendance_text
                 text: "tendance"
                 
             }
-            
-
         } // fin_tendance
         
+        
         Rectangle { // icone
-            x: 300
-            y: 100
+            //x: 300
+            //y: 100
+            x: parent.width/2
+            y: parent.height/4
             id: icone
             color: "sandybrown"
-            width: 300
-            height: 200
+            width: parent.width/2
+            height:parent.height*(2/4)
             
+ //           Image {
+ //               sourceSize.width: Math.min(parent.width,parent.height)
+ //               sourceSize.height: Math.min(parent.width,parent.height)
+ //               anchors.centerIn: parent
+ //               source: "qml/nuit_lune_nuage.svg"
+ //           }
+                
+        
             Text {                  // TODO devrait etre une image
                 id: icone_text
                 text: "icone"
@@ -95,11 +116,12 @@ Window
         
         Rectangle { // description
             x: 0
-            y: 300
+            //y: 300
+            y: parent.height*(3/4)
             id: description
             color: "seashell"
-            width: 600
-            height: 100
+            width: parent.width
+            height: parent.height*(3/4)
             
             Text {
                 id: description_text
