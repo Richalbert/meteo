@@ -97,12 +97,12 @@ Window
             width: parent.width/2
             height:parent.height*(2/4)
             
- //           Image {
- //               sourceSize.width: Math.min(parent.width,parent.height)
- //               sourceSize.height: Math.min(parent.width,parent.height)
- //               anchors.centerIn: parent
- //               source: "qml/nuit_lune_nuage.svg"
- //           }
+            Image {
+                sourceSize.width: Math.min(parent.width,parent.height)
+                sourceSize.height: Math.min(parent.width,parent.height)
+                anchors.centerIn: parent
+                source: "icones/nuit_lune_nuage.svg"
+            }
                 
         
             Text {                  // TODO devrait etre une image
