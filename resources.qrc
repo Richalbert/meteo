@@ -2,5 +2,8 @@
  <qresource>
     <file>qml/main.qml</file>
     <file>qml/icones/nuit_lune_nuage.svg</file>
+    <file>qml/icones/fleche_bas.svg</file>
+    <file>qml/icones/fleche_haut.svg</file>
+    <file>qml/icones/fleche_egal.svg</file>
  </qresource>
 </RCC>

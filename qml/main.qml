@@ -16,15 +16,19 @@ Window
             x: 0
             y: 0
             id: temperature_rectangle
-            //anchors.left:rect2base.right
-            //anchors.right:humidite_rectangle.left
+            
             color: "crimson"
             width: parent.width/3
             height: parent.height/4
             
+            Text{
+                anchors.centerIn: parent
+                text: "37"
+            }
+            
             Text {
                 id: temperature_text
-                text: "temperature"
+                text: "temperature en °C"
             }
         } // fin_temperature
         
@@ -40,9 +44,14 @@ Window
             width: parent.width/3
             height: parent.height/4
             
+            Text{
+                anchors.centerIn: parent
+                text: "12"
+            }
+            
             Text {
                 id: humidite_text
-                text: "humidite"
+                text: "humidite en %"
             }
             
 
@@ -61,9 +70,14 @@ Window
             width: parent.width/3
             height: parent.height/4
             
+            Text{
+                anchors.centerIn: parent
+                text: "1024"
+            }
+            
             Text { 
                 id: pression_text
-                text: "pression"
+                text: "pression en hPa"
             }
             
 
@@ -83,6 +97,13 @@ Window
                 id: tendance_text
                 text: "tendance"
                 
+            }
+            
+            Image {
+                sourceSize.width: Math.min(parent.width,parent.height)
+                sourceSize.height: Math.min(parent.width,parent.height)
+                anchors.centerIn: parent
+                source: "icones/fleche_egal.svg"
             }
         } // fin_tendance
         
